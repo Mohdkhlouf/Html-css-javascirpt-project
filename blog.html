@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eibaa Web Site</title>
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+    
+        <!-- Fontawsome -->
+        <link rel="stylesheet" href="/vendor/css/all.min.css">
+        
+            <!--Custome style-->
+        <link rel="stylesheet" href="assets/css/style.css">
+
+        <link rel="stylesheet" href="vendor/css/sweetalert2.min.css">
+    
+</head>
+<body dir="rtl">
+  <!--header Start-->
+<div class="header">
+  <div class="navbarBox">
+    <div class="container">         
+          <nav class="navbar navbar-expand-lg navbar-light ">
+            <a class="navbar-brand" href="#">
+                <img class="brandLogo" src="assets/img/logo.svg" width="175" class="d-inline-block align-top" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav me-auto d-flex">
+                <li class="nav-item active">
+                    <a class="nav-link m-1" href="index.html">الصفحة الرئيسية <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item m-1">
+                    <a class="nav-link" href="#">الدورات</a>
+                  </li>
+                  <li class="nav-item m-1">
+                      <a class="nav-link" href="blog.html">المقالات</a>
+                    </li>
+                    <li class="nav-item m-1">
+                      <a class="nav-link" href="#"> الاستشارات</a>
+                    </li>
+                    <li class="nav-item m-1">
+                      <a class="nav-link" href="#">تواصل معنا</a>
+                    </li>   
+                    <li class="nav-item m-1">
+                      <div class="reserveConsultation border-2 rounded-pill p-2">
+                        <a class="consultationBtn rounded-pill " href="">احجز استشارتك</a>
+                    </div>                    </li>      
+              </ul>
+            </div>
+            
+          </nav>
+    </div>
+  </div>
+
+</div>
+
+  
+<div class="add-course">
+  <div class="container ">
+    
+      
+      <h1 class="text-center p-5">نظام اضافة المقالات للموقع</h1>
+
+      <form action="" class=" p-3">
+        <div class="row">
+          <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="">عنوان المقال</label>
+                        <input class="inputs form-control p-3" type="text" placeholder="عنوان المقال" id="articleName" required>
+                    </div>
+
+                    <label for="">تصنيف المقال</label>
+                    <select class="inputs form-control p-3" id="articleCategory" name="articleCategory" required>
+                      <option value="social" selected >اجتماعي</option>
+                      <option value="raising">تربوي</option>
+                      <option value="family">مشاكل اسرية</option>
+                    </select>
+        </div>
+        <div class="col-md-6">
+          <label for="">صورة المقال</label>
+          <input class="inputs form-control p-3" type="file" accept="image/*" placeholder="ارفق صورة المقال" id="thumbnail" >
+
+          
+
+          <label for="">التاريخ</label>
+                
+          <input class="inputs form-control p-3" type="date" placeholder="التاريخ" id="createDate" value="2023-04-01" min="2018-01-01" max="2023-12-31" required>
+        </div>
+<div class="row">
+        <label for="">نص المقال</label>
+          <textarea class="inputs form-control p-3" placeholder="اكتب المقال هنا" id="articleTxt" required></textarea>
+
+        </div>
+<div class="row">
+  <div class="col-md-12">
+          <input type="submit" value="Add article" class="btn btn-outline-secondary mt-3" id="addBtn" onclick="addArticle()"/>
+
+          <input type="submit" value="update article" class="btn btn-outline-secondary mt-3" id="updateBtn" onclick="updateArticle()"/>
+
+          <button class="btn btn-outline-secondary mt-3" type="reset">clear</button>
+        </div>
+        </div>
+
+        </div>
+      </form>
+  
+</div>
+  <div class="container">
+      <input type="search" placeholder="search..." id="search" class="form-control my-3">
+
+      <table class="table table table-striped">
+          <thead>
+              <tr>
+                  <th>#</th>
+                  <th>عنوان المقال</th>
+                  <th>تصنيف المقال</th>
+                  <th>صورة المقال</th>
+                  <th>نص المقال</th>
+                  <th>التاريخ</th>
+                  <th>تحديث</th>
+                  <th>حذف</th>
+              </tr>
+          </thead>
+          <button id="deleteBtn" class="btn btn-outline-danger text-center my-3">delete all</button>
+          <tbody id="data">
+              
+          </tbody>
+      </table>
+  </div>
+</div>
+  
+
+<footer class="box mt-5 p-5">
+
+  <div class="container">
+                <div class="row pt-5 text-center">
+                    <div class="col-md-4">
+                      <h6>للتواصل معي من خلال</h6>
+                      <div class="socialLinks">
+                        <a href="#"><i class="fa-brands fa-facebook rounded-circle m-2 text-center "></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram rounded-circle m-2 text-center"></i></a>
+                        <a href="#"><i class="fa-brands fa-telegram rounded-circle m-2 text-center"></i></a>
+                        <a href="#"><i class="fa-brands fa-whatsapp rounded-circle m-2 text-center"></i></a>
+                        <a href="#"><i class="fa-brands fa-tiktok rounded-circle m-2 text-center"></i></a>
+                </div>
+                    </div>
+
+                    <div class="col-md-4 text-center">
+                      <h6>الموقع من تصميم وتنفيذ</h6>
+                        <span>Mohammad Khlouf</span>
+                        <span>mohammad.khlouf@gmail.com</span>
+                      
+                    </div>
+
+                    <div class="col-md-4">
+                      <h6>راسلني عبر</h6>
+                      <span>ُeiba.abutaha@gmail.com</span>
+                    </div>
+                </div>
+                
+</div>
+</footer>
+
+
+
+
+
+
+
+
+
+<script src="assets/js/main.js"></script>
+<script src="vendor/js/sweetalert2.min.js"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+
+</body>
+</html>
